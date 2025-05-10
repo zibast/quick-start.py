@@ -1,0 +1,43 @@
+from instapy import InstaPy
+import os
+from instapy import InstaPy
+import os
+
+# Get credentials from environment variables
+insta_username = os.getenv("dingorapper")
+insta_password = os.getenv("123EDF")
+
+# Check if variables were found
+if not insta_username or not insta_password:
+    raise ValueError("Instagram credentials not found in environment variables!")
+
+# Start InstaPy session
+session = InstaPy(username=insta_username, password=insta_password, headless_browser=True)
+
+# Run basic session
+with session:
+    session.login()
+    session.like_by_tags(["nature", "travel", "tech"], amount=800000)
+    session.set_do_follow(True, percentage=50)
+    session.set_do_comment(True, percentage=30)
+    session.set_comments(["Nice!", "Awesome post!", "Great shot!"])
+
+
+# Get credentials from environment variables
+insta_username = os.getenv("dingorapper")
+insta_password = os.getenv("123EDF")
+
+# Check if variables were found
+if not dingorapper or not 123EDF:
+    raise ValueError("Instagram credentials not found in environment variables!")
+
+# Start InstaPy session
+session = InstaPy(username=insta_username, password=insta_password, headless_browser=True)
+
+# Run basic session
+with session:
+    session.login()
+    session.like_by_tags(["nature", "travel", "tech"], amount=8000000)
+    session.set_do_follow(True, percentage=50)
+    session.set_do_comment(True, percentage=30)
+    session.set_comments(["Nice!", "Awesome post!", "Great shot!"])
